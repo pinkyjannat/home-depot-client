@@ -1,0 +1,56 @@
+[
+    {
+      "name": "Computer",
+      "price": 565,
+      "quantity": 134,
+      "minimumQuantity": 23,
+      "availableQuantity": 54,
+      "picture": "https://i.ibb.co/PQgmJfR/tablet.jpg",
+      "description": "Arrow holds a unique position in the center of the electronics supply chain, connected to suppliers "
+    },
+    {
+      "name": "Computer",
+      "price": 566,
+      "quantity": 135,
+      "minimumQuantity": 24,
+      "availableQuantity": 55,
+      "picture": "https://i.ibb.co/PQgmJfR/tablet.jpg",
+      "description": "Arrow holds a unique position in the center of the electronics supply chain, connected to suppliers "
+    },
+    {
+      "name": "Computer",
+      "price": 567,
+      "quantity": 136,
+      "minimumQuantity": 25,
+      "availableQuantity": 56,
+      "picture": "https://i.ibb.co/PQgmJfR/tablet.jpg",
+      "description": "Arrow holds a unique position in the center of the electronics supply chain, connected to suppliers "
+    },
+    {
+      "name": "Computer",
+      "price": 568,
+      "quantity": 137,
+      "minimumQuantity": 26,
+      "availableQuantity": 57,
+      "picture": "https://i.ibb.co/PQgmJfR/tablet.jpg",
+      "description": "Arrow holds a unique position in the center of the electronics supply chain, connected to suppliers "
+    },
+    {
+      "name": "Computer",
+      "price": 569,
+      "quantity": 138,
+      "minimumQuantity": 27,
+      "availableQuantity": 58,
+      "picture": "https://i.ibb.co/PQgmJfR/tablet.jpg",
+      "description": "Arrow holds a unique position in the center of the electronics supply chain, connected to suppliers "
+    },
+    {
+      "name": "Computer",
+      "price": 570,
+      "quantity": 139,
+      "minimumQuantity": 28,
+      "availableQuantity": 59,
+      "picture": "https://i.ibb.co/PQgmJfR/tablet.jpg",
+      "description": "Arrow holds a unique position in the center of the electronics supply chain, connected to suppliers "
+    }
+  ]
