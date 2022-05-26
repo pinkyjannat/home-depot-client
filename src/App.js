@@ -21,6 +21,7 @@ import Users from './Pages/DashBoard/Users';
 import ManageProducts from './Pages/DashBoard/ManageProduct';
 import ManageAllOrders from './Pages/DashBoard/ManageAllOrders';
 import RequireAdmin from './Pages/Shared/Login/RequireAdmin';
+import AddProduct from './Pages/DashBoard/AddProduct';
 
 
 function App() {
@@ -39,8 +40,10 @@ function App() {
           <Route path='myOrders' element={<MyOrders />}></Route>
           <Route path='addReview' element={<AddReview />}></Route>
           <Route path='makeAdmin' element={<RequireAdmin><Users/></RequireAdmin>}></Route>
-          <Route path='manageProduct' element={<ManageProducts/>}></Route>
-          <Route path='manageAllOrders' element={<ManageAllOrders/>}></Route>
+          <Route path='manageProduct' element={<RequireAdmin><ManageProducts/></RequireAdmin>}></Route>
+          <Route path='manageAllOrders' element={<RequireAdmin><ManageAllOrders/></RequireAdmin>}></Route>
+          <Route path='addProduct' element={<RequireAdmin><AddProduct/></RequireAdmin>}></Route>
+
         </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>

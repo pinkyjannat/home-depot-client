@@ -12,7 +12,7 @@ const MyOrders = () => {
     const [items, setitems] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${user?.email}`, {
+        fetch(`https://sleepy-thicket-67798.herokuapp.com/orders/${user?.email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -41,7 +41,7 @@ const MyOrders = () => {
     const deleteItem = (props) => {
         // console.log(props)
       
-            fetch(`http://localhost:5000/orders/${props}`, {
+            fetch(`https://sleepy-thicket-67798.herokuapp.com/orders/${props}`, {
                 method: 'Delete',
             })
                 .then(response => response.json())

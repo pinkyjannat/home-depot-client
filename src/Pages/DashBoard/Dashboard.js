@@ -13,7 +13,7 @@ const Dashboard = () => {
         <div className="drawer drawer-mobile">
             <input id=" dashboard-sidebar" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content ">
-                <h2 className='text-2xl font-bold text-purple-500'> Welcome to your Dashoard</h2>
+                <h2 className='text-2xl font-bold text-purple-500'> Welcome to your DashBoard</h2>
                 <Outlet></Outlet>
 
 
@@ -21,22 +21,21 @@ const Dashboard = () => {
             <div className="drawer-side">
                 <label htmlFor=" dashboard-sidebar" className="drawer-overlay"></label>
                 <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
-                    {/* <!-- Sidebar content here --> */}
-                    <li><Link to="/dashboard"> My Profile </Link></li>
+                <li><Link to="/dashboard"> My Profile </Link></li>
+                   {user && !admin && <>
                     <li><Link to="/dashboard/myOrders"> My Orders </Link></li>
                     <li><Link to='/dashboard/addReview'>Add A Review</Link></li>
-                    <li><Link to='/dashboard/manageAllOrders'>Manage All Orders</Link></li>
-                    <li><Link to='/dashboard/addAProducts'>Add A Product</Link></li>
-                    <li><Link to='/dashboard/makeAdmin'>Make Admin</Link></li>
-                    <li><Link to='/dashboard/manageProducts'>Manage Products</Link></li>
-                    {
-                        admin && <>
-                            <li><Link to="/dashboard/mangeProduct">Manage</Link></li>
-                            <li><Link to="/dashboard/makeAdmin">Make admin</Link></li>
-                            <li><Link to="/dashboard/manageAllOrders">Manage all orders</Link></li>
-                            <li><Link to="/dashboard/manageAllOrders">Manage all orders</Link></li>
-                        </>
-                    }
+                   </>}
+                
+                {
+                    admin && <>
+                    
+                    <li><Link to="/dashboard/makeAdmin">Make Admin</Link></li>
+                    <li><Link to="/dashboard/manageProduct">Manage Product</Link></li>
+                    <li><Link to="/dashboard/manageAllOrders">Manage All Orders</Link></li>
+                    <li><Link to="/dashboard/addProduct">Add A product</Link></li>
+                    </>
+                }
                 </ul>
 
             </div>

@@ -16,7 +16,7 @@ const AddReview = () => {
 
     const onSubmit = data => {
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://sleepy-thicket-67798.herokuapp.com/review', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',

@@ -23,7 +23,7 @@ const Purchase = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm()
 
 
-    const { data, isLoading } = useQuery('services', () => fetch(`http://localhost:5000/purchase/${id}`, {
+    const { data, isLoading } = useQuery('services', () => fetch(`https://sleepy-thicket-67798.herokuapp.com/purchase/${id}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -50,7 +50,7 @@ console.log(data);
         return <Loading></Loading>
     }
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/purchase/${_id}`, {
+    //     fetch(`https://sleepy-thicket-67798.herokuapp.com/purchase/${_id}`, {
     //         method: 'GET',
     //         headers: {
     //             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -108,7 +108,7 @@ console.log(data);
         }
         else {
             // /order
-            fetch('http://localhost:5000/order', {
+            fetch('https://sleepy-thicket-67798.herokuapp.com/order', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

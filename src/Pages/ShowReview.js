@@ -7,7 +7,7 @@ import Loading from './Shared/Loading';
 
 const ShowReview = () => {
     const [user, loading] = useAuthState(auth);
-    const { data: ratings, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/review').then(res => res.json()))
+    const { data: ratings, isLoading, refetch } = useQuery('users', () => fetch('https://sleepy-thicket-67798.herokuapp.com/review').then(res => res.json()))
 
     if (isLoading || loading) {
         return <Loading></Loading>
