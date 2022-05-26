@@ -30,10 +30,10 @@ const MyProfile = () => {
     const onSubmit = data => {
         const user = {
             email: data?.email,
-           education: data.education,
-           location: data.location,
-           PhoneNumber: data.PhoneNumber,
-           LinkedInprofilelink: data.LinkedInprofilelink
+           education: data?.education,
+           location: data?.location,
+           PhoneNumber: data?.PhoneNumber,
+           LinkedInprofilelink: data?.LinkedInprofilelink
 
 
         }

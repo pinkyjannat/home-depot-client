@@ -24,7 +24,7 @@ const SingleTools = ({ tool }) => {
                 <p>Minimum Order: <span className='font-semiBold'>{minimumQuantity}</span> unit</p>
                 <h5 className='text-xl'>Price: <span className='text-orange-500'> ${price}/unit</span></h5>
                 <div class="card-actions justify-center">
-                    <button onClick={() => handlePurchase(_id)} className="btn px-8 btn-primary">Purchase</button>
+                    <button onClick={() => handlePurchase(_id)} className="btn px-8 btn-primary ">Purchase</button>
                 </div>
             </div>
         </div>

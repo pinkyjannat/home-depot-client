@@ -17,28 +17,34 @@ import MyOrders from './Pages/DashBoard/MyOrders';
 import AddReview from './Pages/DashBoard/AddReview';
 import MyPortfolio from './Pages/MyPortfolio';
 import NotFound from './Pages/NotFound';
+import Users from './Pages/DashBoard/Users';
+import ManageProducts from './Pages/DashBoard/ManageProduct';
+import ManageAllOrders from './Pages/DashBoard/ManageAllOrders';
 
 
 function App() {
   return (
     <div className='max-w-7xl mx-auto px-12'>
-    <Navbar></Navbar>
-    <Routes>
-      <Route path='/' element={<Home></Home>}></Route>
-      <Route path='/blogs' element={<Blogs></Blogs>}></Route>
-      <Route path='/login' element={<Login></Login>}></Route>
-      <Route path="/signup" element={<SignUp></SignUp>} />
-      <Route path="/myportfolio" element={<MyPortfolio></MyPortfolio>} />
-      <Route path='/purchase/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
-      <Route path='/dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
-      <Route index element={<MyProfile/>}></Route>
-          <Route path='myOrders' element={<MyOrders/>}></Route>
-          <Route path='addReview' element={<AddReview/>}></Route>
+      <Navbar></Navbar>
+      <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path="/signup" element={<SignUp></SignUp>} />
+        <Route path="/portfolio" element={<MyPortfolio></MyPortfolio>} />
+        <Route path='/purchase/:id' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
+        <Route path='/dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
+          <Route index element={<MyProfile />}></Route>
+          <Route path='myOrders' element={<MyOrders />}></Route>
+          <Route path='addReview' element={<AddReview />}></Route>
+          <Route path='makeAdmin' element={<Users/>}></Route>
+          <Route path='manageProduct' element={<ManageProducts/>}></Route>
+          <Route path='manageAllOrders' element={<ManageAllOrders/>}></Route>
         </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
-    </Routes>
-    <Footer></Footer>
-    <ToastContainer></ToastContainer>
+      </Routes>
+      <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

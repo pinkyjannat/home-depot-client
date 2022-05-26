@@ -2,11 +2,11 @@ import React from 'react';
 
 const Footer = () => {
     return (
-      <div className='max-w-full text-white mt-24  text-center mx-auto bg-gray-500 px-20'>
+      <div className='max-w-full text-white mt-10  text-center mx-auto bg-gray-500 px-20'>
             <footer 
-         className="p-10 ">
+         className="p-5 ">
             <div className='footer mt-28 mb-0'>
-                <div className='lg:ml-80 '>
+                <div className='lg:ml-50 '>
                     <span className="footer-title">Services</span>
                     <a className="link link-hover">Branding</a>
                     <a className="link link-hover">Design</a>

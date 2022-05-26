@@ -2,8 +2,6 @@ import React from 'react';
 import opening from '../images/opening.jpg'
 import contact from '../images/contact.jpg';
 import location from '../images/location.webp';
-
-
 import InfoCard from './InfoCard';
 
 const Info = () => {

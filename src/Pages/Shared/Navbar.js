@@ -1,4 +1,5 @@
 import { signOut } from 'firebase/auth';
+import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -13,9 +14,7 @@ const Navbar = () => {
     const menuItems = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/blogs">Blogs</Link></li>
-        <li><Link to="/review">Review</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
-        <li><Link to="/myportfolio">My Portfolio</Link></li>
+        <li><Link to="/portfolio">My Portfolio</Link></li>
         {
             user && <li><Link to="/dashboard">Dashboard</Link></li>
         }
@@ -23,7 +22,7 @@ const Navbar = () => {
         
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-gray-400">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">

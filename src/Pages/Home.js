@@ -1,8 +1,10 @@
 import React from 'react';
 import Banner from '../Components/Banner';
+import Facilities from '../Components/Facilities';
 import Info from '../Components/Info';
 import Summary from '../Components/Summary';
 import ToolsCard from '../Components/ToolsCard';
+import ShowReview from './ShowReview';
 
 
 
@@ -16,6 +18,8 @@ const Home = () => {
             <ToolsCard></ToolsCard>
             <Info></Info>
             <Summary></Summary>
+            <Facilities></Facilities>
+            <ShowReview></ShowReview>
            
         </div>
     );
