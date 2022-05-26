@@ -13,7 +13,7 @@ const ToolsCard = () => {
         <div className='py-20 mx-auto '>
               <div className="divider my-20"></div> 
 
-            <h2 className='text-5xl font-semiBold text-center'>We Manufacture All Kind of Vehicle parts {tools.length}</h2>
+            <h2 className='text-5xl font-semiBold text-center'>We Manufacture All Kind of home renovation tools for everyday use</h2>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 sm:mx-auto gap-8 mx-auto'>
                 {
                     tools.map(tool=><SingleTools key={tool._id} tool={tool} ></SingleTools>)
