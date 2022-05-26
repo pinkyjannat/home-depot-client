@@ -20,6 +20,7 @@ import NotFound from './Pages/NotFound';
 import Users from './Pages/DashBoard/Users';
 import ManageProducts from './Pages/DashBoard/ManageProduct';
 import ManageAllOrders from './Pages/DashBoard/ManageAllOrders';
+import RequireAdmin from './Pages/Shared/Login/RequireAdmin';
 
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
           <Route index element={<MyProfile />}></Route>
           <Route path='myOrders' element={<MyOrders />}></Route>
           <Route path='addReview' element={<AddReview />}></Route>
-          <Route path='makeAdmin' element={<Users/>}></Route>
+          <Route path='makeAdmin' element={<RequireAdmin><Users/></RequireAdmin>}></Route>
           <Route path='manageProduct' element={<ManageProducts/>}></Route>
           <Route path='manageAllOrders' element={<ManageAllOrders/>}></Route>
         </Route>
