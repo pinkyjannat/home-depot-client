@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useToken from '../../../hooks/useToken';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../Loading';
+import { toast } from 'react-toastify';
 
 
 const Login = () => {
+    const emailRef = useRef('');
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [
@@ -16,6 +18,7 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(auth);
     const [token] = useToken(user || gUser);
 
 
@@ -42,6 +45,18 @@ const Login = () => {
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password);
 
+    }
+
+
+    const handleReset = async () => {
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        }
+        else {
+            toast('Please enter your email address')
+        }
     }
 
     return (
@@ -111,6 +126,7 @@ const Login = () => {
                         <input className='btn btn-secondary w-full max-w-xs text-white' type="submit" value="Login" />
                     </form>
                     <p><small>New to Auto parts Manufacture <Link className='text-primary' to="/signup">Register Here</Link></small></p>
+                    <p className='text-center mt-3'>Forget Your password?  <button className='btn btn-link text-info text-decoration-none pe-auto' onClick={handleReset}>Reset password</button> </p>
 
                     <div className="divider">OR</div>
                     <button

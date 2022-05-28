@@ -11,7 +11,7 @@ const ManageProducts = () => {
     }
 
     const deleteItem = (props) => {
-        // console.log(props)
+       
 
         fetch(`https://sleepy-thicket-67798.herokuapp.com/purchase/${props}`, {
             method: 'Delete',
@@ -19,8 +19,8 @@ const ManageProducts = () => {
             .then(response => response.json())
             .then(data => {
                 if (data.deletedCount > 0) {
-                    const remaing = items.filter(itme => itme._id !== props)
-                    setItems(remaing)
+                    const remaining = items.filter(item => item._id !== props)
+                    setItems(remaining)
                     refetch();
                 }
             })

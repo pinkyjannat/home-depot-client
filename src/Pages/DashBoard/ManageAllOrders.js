@@ -11,7 +11,6 @@ const ManageAllOrders = () => {
     }
 
     const deleteItem = (props) => {
-        // console.log(props)
       
             fetch(`https://sleepy-thicket-67798.herokuapp.com/orders/${props}`, {
                 method: 'Delete',
@@ -19,8 +18,8 @@ const ManageAllOrders = () => {
                 .then(response => response.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        const remaing = items.filter(itme => itme._id !== props)
-                        setItems(remaing);
+                        const remaining = items.filter(item => item._id !== props)
+                        setItems(remaining);
                         refetch();
                     }
                 })
@@ -36,7 +35,7 @@ const ManageAllOrders = () => {
                             <th></th>
                             <th>Product Name</th>
                             <th>Price</th>
-                            <th>Favorite Color</th>
+                            <th>delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,7 +55,7 @@ const ManageAllOrders = () => {
                                         <div className="modal-box relative">
                                             <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                                             <h3 className="text-lg font-bold">Are sure You want to delete the order?</h3>
-                                          <button onClick={() => deleteItem(product._id)} className="btn border-0 my-6 text-white bg-red-500 btn-xs"><span >Remove user</span> </button>
+                                          <button onClick={() => deleteItem(product._id)} className="btn border-0 my-6 text-white bg-red-500 btn-xs"><span >delete</span> </button>
                                         </div>
                                     </div>
 

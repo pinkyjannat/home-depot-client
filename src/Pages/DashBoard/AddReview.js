@@ -40,7 +40,7 @@ const AddReview = () => {
         .then(data => {
                 if (data.acknowledged) {
                     reset()
-                   toast.success('Thanks for you Review')
+                   toast.success('Thanks for your Review')
 
                 }
             })
@@ -54,9 +54,9 @@ const AddReview = () => {
                     <input {...register("Name")} type='text' value={user?.displayName} className="input input-bordered w-full my-[14px]" />
                     {/* email */}
                     <input {...register("email")} type='text' value={user?.email} className="input input-bordered w-full my-[14px]" />
-                    {/* discripition */}
+                    {/* description */}
                     <textarea class="textarea w-full textarea-info"  {...register("description")} required placeholder="Make a Comment Here"></textarea>
-                    {/* raing */}
+                    {/* rating */}
                     <select class="select select-info w-full my-[14px]"{...register("rating")}>
                         <option selected disabled>Rating</option>
                         <option>1</option>

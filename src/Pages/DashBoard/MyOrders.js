@@ -9,7 +9,7 @@ const MyOrders = () => {
 
     const [user] = useAuthState(auth)
     const navigate = useNavigate('')
-    const [items, setitems] = useState([])
+    const [items, setItems] = useState([])
 
     useEffect(() => {
         fetch(`https://sleepy-thicket-67798.herokuapp.com/orders/${user?.email}`, {
@@ -33,7 +33,7 @@ const MyOrders = () => {
             })
             .then(data => {
                 console.log(data);
-                setitems(data)
+                setItems(data)
             })
     }, [])
 
@@ -47,8 +47,8 @@ const MyOrders = () => {
                 .then(response => response.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        const remaing = items.filter(itme => itme._id !== props)
-                        setitems(remaing)
+                        const remaining = items.filter(item => item._id !== props)
+                        setItems(remaining)
                     }
                 })
         
@@ -62,21 +62,21 @@ const MyOrders = () => {
                         <h2 class="card-title">
                             Product Name : {item?.name}
                             {
-                                item?.paid === 'panding' ? <div class="badge badge-primary pb-[3px]">{item?.paid}</div> : <div class="badge badge-primary pb-[3px]">paid</div>
+                                item?.paid === 'pending' ? <div class="badge badge-primary pb-[3px]">{item?.paid}</div> : <div class="badge badge-primary pb-[3px]">paid</div>
                             }
                         </h2>
                         <div class=" justify-start">
-                            <p className='my-[6px] font-semibold'>Totul Price : {parseFloat(item?.price) * parseFloat(item.quantity)}</p>
-                            <p className='my-[6px] font-semibold'>Quentity : {item?.quantity}</p>
-                            <p className='my-[6px] font-semibold'>Reciver Name : {item?.reciverName}</p>
-                            <small className='mb-[6px] font-semibold'>User-email:{item?.email}</small>
-                            <p className='my-[6px] font-semibold'><small>Address: {item.Address}</small></p>
-                            <p className='my-[6px] font-semibold'>Phone Number : <small>{item?.PhoneNumber}</small></p>
+                            <p className='my-[6px] font-semiBold'>Totul Price : {parseFloat(item?.price) * parseFloat(item.quantity)}</p>
+                            <p className='my-[6px] font-semiBold'>Quantity : {item?.quantity}</p>
+                            <p className='my-[6px] font-semiBold'>Receiver Name : {item?.reciverName}</p>
+                            <small className='mb-[6px] font-semiBold'>User-email:{item?.email}</small>
+                            <p className='my-[6px] font-semiBold'><small>Address: {item.Address}</small></p>
+                            <p className='my-[6px] font-semiBold'>Phone Number : <small>{item?.PhoneNumber}</small></p>
 
                             <div className='flex justify-between'>
                                 <div>
                                     {
-                                        item.paid === 'panding' && <Link to={'/payment/' + item?._id}><button className="btn bg-green-700 px-[40px] text-white " >Pay</button></Link>
+                                        item.paid === 'pending' && <Link to={'/payment/' + item?._id}><button className="btn bg-green-700 px-[40px] text-white " >Pay</button></Link>
                                     }
                                 </div>
                                 <label for="my-modal-3" class="btn modal-button bg-red-500 border-0 px-5">Delete</label>
@@ -89,8 +89,6 @@ const MyOrders = () => {
                                         <button className="btn bg-red-500 px-[40px] text-white " onClick={() => deleteItem(item?._id)}>Delete</button>
                                     </div>
                                 </div>
-
-                               
                             </div>
 
                         </div>

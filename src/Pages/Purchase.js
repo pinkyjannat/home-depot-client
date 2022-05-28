@@ -49,39 +49,12 @@ console.log(data);
     if (isLoading || loading) {
         return <Loading></Loading>
     }
-    // useEffect(() => {
-    //     fetch(`https://sleepy-thicket-67798.herokuapp.com/purchase/${_id}`, {
-    //         method: 'GET',
-    //         headers: {
-    //             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-    //         }
-    //     })
-    //         .then(res => {
-    //             console.log(res.status)
-    // if (res.status === 403) {
-    //     signOut(auth);
-    //     localStorage.removeItem('accessToken')
-    //     navigate('/login')
-    // }
-    // else if (res.status === 401) {
-    //     signOut(auth);
-    //     localStorage.removeItem('accessToken')
-    //     navigate('/login')
-    // }
-    // return 
-    //             res.json()
-    //         })
-    //         .then(data => {
-    //             setItem(data);
-    //         })
-    // }, [])
-
+ 
 
     const onSubmit = event => {
         // console.log(data)
         const order = {
             name: data?.name,
-            
             email:event?.email,
             quantity: event?.quantity,
             reciverName: event?.reciverName,
@@ -97,7 +70,7 @@ console.log(data);
         const inputQunentity = parseInt(event?.quantity);
         const minimumQuantity =parseInt( data?.minimumQuantity);
         const availableQuantity =parseInt( data?.availableQuantity);
-        console.log(availableQuantity);
+        // console.log(availableQuantity);
 
 
         if (inputQunentity < minimumQuantity) {
@@ -125,24 +98,7 @@ console.log(data);
                 })
         }
     }
-    // const handleQuantity = (event) => {
-    //     const inputQunentity = parseFloat(data?.quantity);
-    //     console.log(inputQunentity);
-    //     const minimumQuantity = data?.minimumQuantity;
-    //     console.log(minimumQuantity);
-    //     const availableQuantity = data?.availableQuantity;
-
-    //     if (30 > inputQunentity) {
-    //         setQuantityError(`At least ${minimumQuantity}can be purchased`);
-    //         setQuantity(parseInt(event.target.value));
-    //     } else if (parseInt(event.target.value) > availableQuantity) {
-    //         setQuantityError(`Out of stock! You can order ${availableQuantity}`)
-    //         setQuantity(parseInt(event.target.value));
-    //     } else {
-    //         setQuantity(parseInt(event.target.value));
-    //         setQuantityError('');
-    //     }
-    // };
+   
 
     return (
         <div className='mt-24'>

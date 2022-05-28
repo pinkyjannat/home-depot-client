@@ -15,8 +15,6 @@ const Dashboard = () => {
             <div className="drawer-content ">
                 <h2 className='text-2xl font-bold text-purple-500'> Welcome to your DashBoard</h2>
                 <Outlet></Outlet>
-
-
             </div>
             <div className="drawer-side">
                 <label htmlFor=" dashboard-sidebar" className="drawer-overlay"></label>

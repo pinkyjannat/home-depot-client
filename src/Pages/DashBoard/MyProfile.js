@@ -50,7 +50,7 @@ const MyProfile = () => {
            education: data?.education,
            location: data?.location,
            PhoneNumber: data?.PhoneNumber,
-           LinkedInprofilelink: data?.LinkedInprofilelink
+           LinkedInProfilelink: data?.LinkedInProfilelink
 
 
         }

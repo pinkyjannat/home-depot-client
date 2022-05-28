@@ -32,7 +32,6 @@ const AddProduct = () => {
             .then(data => {
                 if (data.acknowledged) {
                     reset()
-                    // alert('Thanks for you Order')
                     toast.success('Order is taken')
                 }
             })

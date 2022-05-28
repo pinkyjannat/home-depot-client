@@ -10,7 +10,7 @@ const useAdmin = user =>{
                 method: 'GET',
                 headers:{
                     'content-type' : 'application/json',
-                    authorization: `Bearer ${localStorage.getItem('accesssToken')}`
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 },
               
             })
